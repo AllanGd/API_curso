@@ -35,4 +35,9 @@ public class CursoController {
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(curso.getIdCurso()).toUri();
         return ResponseEntity.created(uri).build();
     }
+
+    @DeleteMapping("/curso/{id}")
+    public void deletarCurso(@PathVariable Integer id){
+        service.deletarCursoPorId(id);
+    }
 }
